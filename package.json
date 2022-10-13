@@ -1,15 +1,35 @@
 {
   "name": "mala-ui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.4",
+  "description": "mala-ui：一个由vue编写的ui组件库。",
+  "main": "build/index.umd.js",
+  "files": ["build", "components"],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build:js": "webpack --config webpack.component.js",
+    "build:css": "gulp handleScss",
+    "build": "npm run build:js && npm run build:css"
   },
   "dependencies": {
     "vue": "^3.2.13"
   },
   "devDependencies": {
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "unplugin-vue-define-options": "^0.12.0",
+    "vue-loader": "^17.0.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "keywords": ["mala", "mala-ui"],
+  "author": "liliang12138",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liliangCS/mala-ui"
   }
 }
